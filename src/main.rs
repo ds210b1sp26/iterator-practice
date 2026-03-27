@@ -25,10 +25,10 @@ fn sum_of_list(numbers: &[i32]) -> i32 {
 /// into a new vector.
 ///
 /// Input:   &[1, 2, 3, 4, 5, 6, 7, 8]
-/// Output:  vec![2, 4, 6, 8]
+/// Output:  vec![&2, &4, &6, &8]
 ///
 /// Statements needed: 1
-fn filter_even(numbers: &[i32]) -> Vec<i32> {
+fn filter_even(numbers: &[i32]) -> Vec<&i32> {
     todo!()
 }
 
@@ -159,7 +159,7 @@ fn main() {
     results.push(check("sum_of_list", "[1, 2, 3, 4, 5]",
         || sum_of_list(&[1, 2, 3, 4, 5]), 15));
     results.push(check("filter_even", "[1, 2, 3, 4, 5, 6, 7, 8]",
-        || filter_even(&[1, 2, 3, 4, 5, 6, 7, 8]), vec![2, 4, 6, 8]));
+        || filter_even(&[1, 2, 3, 4, 5, 6, 7, 8]), vec![&2, &4, &6, &8]));
     results.push(check(r#"uppercase_all(["hello", "world", "rust"])"#, r#"["hello", "world", "rust"]"#,
         || uppercase_all(&["hello", "world", "rust"]),
         vec!["HELLO".to_string(), "WORLD".to_string(), "RUST".to_string()]));
